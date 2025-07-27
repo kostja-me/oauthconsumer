@@ -28,7 +28,20 @@ services:
     depends_on:
       - db
       - redis
-
+  one_off:
+    build: .
+    restart: always
+    command: python manage.py runserver 0.0.0.0:9000
+    env_file:
+      - .env
+    volumes:
+      - .:/code
+    links:
+      - db
+      - redis
+    depends_on:
+      - db
+      - redis
   media:
     image: nginx
     volumes:

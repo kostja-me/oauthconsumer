@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    "customprovider",
     "allauth.socialaccount.providers.github",
     "allauth.socialaccount.providers.google",
     "allauth.socialaccount.providers.gitlab",
@@ -216,3 +217,20 @@ DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL", default="support@example.com")
 
 DEFAULT_ADMIN_PASSWORD = env("DEFAULT_ADMIN_PASSWORD", default=None)
 DEMO_MODE = env.bool("DEMO_MODE", default=False)  # fills login and password on login form for demo purposes
+
+
+SOCIALACCOUNT_PROVIDERS = {
+    "customprovider": {
+        "APPS": [
+            {
+                "provider_id": "",
+                "name": "My Staff",
+                "client_id": env.str("APP_CLIENT_ID", default=None),
+                "secret": env.str("APP_CLIENT_SECRET", default=None),
+                "settings": {
+                    "host": "oauthprovider.applikuapp.com"
+                }
+            }
+        ]
+    }
+}
