@@ -10,9 +10,9 @@ from allauth.socialaccount.providers.oauth2.views import (
 class CustomOAuth2Adapter(OAuth2Adapter):
     provider_id = "custom"
     host = app_settings.PROVIDERS.get(provider_id, {}).get("HOST", "oauthprovider.applikuapp.com")
-    access_token_url = "https://%s/v3/auth/token" % host
-    authorize_url = "https://%s/v3/auth/auth" % host
-    profile_url = "https://%s/v3/profile" % host
+    access_token_url = "https://%s/o/auth/token" % host
+    authorize_url = "https://%s/o/auth/auth" % host
+    profile_url = "https://%s/o/profile" % host
 
     def complete_login(self, request, app, token, **kwargs):
         headers = {"Authorization": "OAuth {0}".format(token.token)}
