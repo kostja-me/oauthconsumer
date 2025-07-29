@@ -223,9 +223,13 @@ SOCIALACCOUNT_PROVIDERS = {
                 "client_id": env.str("APP_CLIENT_ID", default='gfZficRZ7LzIb7eMXNMUNuEliG8NTKZALagfKeK4'),
                 "secret": env.str("APP_CLIENT_SECRET", default='kfgnlkgjhdflgsdfjlkghdjklghredlthueryutyeriouthkjlfdhgkjsdfhgksjdfgfd'),
                 "settings": {
-                    "host": "oauthprovider.applikuapp.com"
+                    "host": "oauthprovider.applikuapp.com",
+                    "oauth_pkce_enabled": True
                 }
             }
         ]
     }
 }
+
+SOCIALACCOUNT_STORE_TOKENS = True
+SOCIALACCOUNT_EMAIL_AUTHENTICATION_AUTO_CONNECT = True
