@@ -18,7 +18,10 @@ class CustomProvider(OAuth2Provider):
         return ['read', 'write']
 
     def extract_uid(self, data):
-        return str(data["id"])
+        from pprint import pprint
+        print("extract_uid. data=")
+        pprint(data)
+        return str(data.get("id"))
 
     def extract_common_fields(self, data):
         return dict(
