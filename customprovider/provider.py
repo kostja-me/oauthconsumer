@@ -15,7 +15,7 @@ class CustomProvider(OAuth2Provider):
     oauth2_adapter_class = CustomOAuth2Adapter
 
     def get_default_scope(self):
-        return ["https://cloud.feedly.com/subscriptions"]
+        return []
 
     def extract_uid(self, data):
         return str(data["id"])
