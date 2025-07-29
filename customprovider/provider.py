@@ -15,7 +15,7 @@ class CustomProvider(OAuth2Provider):
     oauth2_adapter_class = CustomOAuth2Adapter
 
     def get_default_scope(self):
-        return ['read', 'write', 'openid']
+        return ['read', 'write']
 
     def extract_uid(self, data):
         from pprint import pprint
