@@ -223,8 +223,8 @@ SOCIALACCOUNT_PROVIDERS = {
             {
                 "provider_id": "",
                 "name": "My Staff",
-                "client_id": env.str("APP_CLIENT_ID", default=None),
-                "secret": env.str("APP_CLIENT_SECRET", default=None),
+                "client_id": env.str("APP_CLIENT_ID", default='gfZficRZ7LzIb7eMXNMUNuEliG8NTKZALagfKeK4'),
+                "secret": env.str("APP_CLIENT_SECRET", default='pbkdf2_sha256$870000$jhWBixbp6ElngnbKetR430$C3iZqt+OrzYPmPzZN1HThj9tBdy/pjpFhwfjeQuTXEg='),
                 "settings": {
                     "host": "oauthprovider.applikuapp.com"
                 }
