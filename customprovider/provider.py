@@ -1,18 +1,18 @@
 from allauth.socialaccount.providers.base import ProviderAccount
-from allauth.socialaccount.providers.feedly.views import FeedlyOAuth2Adapter
+from .views import CustomOAuth2Adapter
 from allauth.socialaccount.providers.oauth2.provider import OAuth2Provider
 
 
-class FeedlyAccount(ProviderAccount):
+class CustomAccount(ProviderAccount):
     def get_avatar_url(self):
         return self.account.extra_data.get("picture")
 
 
-class FeedlyProvider(OAuth2Provider):
-    id = "feedly"
-    name = "Feedly"
-    account_class = FeedlyAccount
-    oauth2_adapter_class = FeedlyOAuth2Adapter
+class CustomProvider(OAuth2Provider):
+    id = "custom"
+    name = "Custom"
+    account_class = CustomAccount
+    oauth2_adapter_class = CustomOAuth2Adapter
 
     def get_default_scope(self):
         return ["https://cloud.feedly.com/subscriptions"]
@@ -28,4 +28,4 @@ class FeedlyProvider(OAuth2Provider):
         )
 
 
-provider_classes = [FeedlyProvider]
+provider_classes = [CustomProvider]

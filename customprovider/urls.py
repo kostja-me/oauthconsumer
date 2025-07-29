@@ -1,5 +1,5 @@
-from allauth.socialaccount.providers.feedly.provider import FeedlyProvider
+from .provider import CustomProvider
 from allauth.socialaccount.providers.oauth2.urls import default_urlpatterns
 
 
-urlpatterns = default_urlpatterns(FeedlyProvider)
+urlpatterns = default_urlpatterns(CustomProvider)
